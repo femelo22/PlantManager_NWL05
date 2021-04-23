@@ -15,7 +15,7 @@ import wateringImg from '../assets/watering.png';
 import fonts from '../styles/fonts';
 import colors from '../styles/colors';
 
-export default function Welcome() {
+export function Welcome() {
 
   const navigation = useNavigation();
 
