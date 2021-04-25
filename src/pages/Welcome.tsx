@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  Text,
   SafeAreaView,
+  Text,
   Image,
   TouchableOpacity,
   StyleSheet,
@@ -12,47 +12,44 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core';
 
 import wateringImg from '../assets/watering.png';
-import fonts from '../styles/fonts';
 import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 export function Welcome() {
-
   const navigation = useNavigation();
 
-  function handleStart () {
-    navigation.navigate('UserIndentificationer');
+  function handleStart() {
+    navigation.navigate('UserIdentification');
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.wapper}>
-        <Text style={styles.title}>
-          Gerencie {'\n'}
-          suas plantas de {'\n'}
+    <SafeAreaView style={ styles.container }>
+      <View style={ styles.wrapper }>
+        <Text style={ styles.title }>
+          Gerencie { '\n' }
+          suas plantas de { '\n' }
           forma fácil
         </Text>
 
         <Image
-          source={wateringImg}
-          style={styles.image}
-        //resizeMode="contain"
+          source={ wateringImg }
+          style={ styles.image }
+          resizeMode="contain"
         />
 
-        <Text style={styles.subtitle}>
-            Não deixe suas plantinhas com sede, nós lembramos você!
+        <Text style={ styles.subtitle }>
+          Não deixe suas plantinhas com sede. Nós cuidamos de lembrar você, sempre que precisar.
         </Text>
 
         <TouchableOpacity
           style={styles.button}
           activeOpacity={0.7}
-          onPress={handleStart}
+          onPress={ handleStart }
         >
-
           <Feather
             name="chevron-right"
-            style={styles.buttonIcon}
+            style={ styles.buttonIcon }
           />
-
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -61,9 +58,9 @@ export function Welcome() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
-  wapper: {
+  wrapper: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -76,19 +73,17 @@ const styles = StyleSheet.create({
     color: colors.heading,
     marginTop: 38,
     fontFamily: fonts.heading,
-    lineHeight: 34
+    lineHeight: 30
   },
   subtitle: {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 18,
     paddingHorizontal: 20,
     color: colors.heading,
     fontFamily: fonts.text
   },
   image: {
-    height: 300,
-    width: 300
-    //height: Dimensions.get('window').width * 0.7
+    height: Dimensions.get('window').width * 0.7
   },
   button: {
     backgroundColor: colors.green,
@@ -97,11 +92,10 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 10,
     height: 56,
-    width: 56,
-    paddingHorizontal: 10
+    width: 56
   },
   buttonIcon: {
-    fontSize: 25,
+    fontSize: 32,
     color: colors.white
   }
 });
